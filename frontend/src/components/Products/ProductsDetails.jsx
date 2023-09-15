@@ -113,6 +113,16 @@ const ProductsDetails = ({ data }) => {
       toast.error("Please login to create a conversation");
     }
   };
+  // Function to truncate long descriptions
+  const truncateDescription = (description, maxLength) => {
+    if (description.length <= maxLength) {
+      return description;
+    }
+    return description.substring(0, maxLength) + "...";
+  };
+
+  // State to track whether to show the full description or truncated
+  const [showFullDescription, setShowFullDescription] = useState(false);
   return (
     <div className="bg-white">
       {data ? (
@@ -151,7 +161,21 @@ const ProductsDetails = ({ data }) => {
 
               <div className="w-full 800px:w-[50%] pt-5">
                 <h1 className={`${styles.productTitle}`}>{data.name}</h1>
-                <p>{data.description}</p>
+                <p>
+                  {showFullDescription
+                    ? data.description
+                    : truncateDescription(data.description, 500)}
+                  {data.description.length > 500 && (
+                    <button
+                      className="text-blue-500 hover:underline focus:outline-none"
+                      onClick={() =>
+                        setShowFullDescription(!showFullDescription)
+                      }
+                    >
+                      {showFullDescription ? "See Less" : "See More"}
+                    </button>
+                  )}
+                </p>
                 <div className="flex pt-3">
                   <h4 className={`${styles.productDiscountPrice}`}>
                     {data.discountPrice}$
@@ -252,7 +276,7 @@ const ProductsDetails = ({ data }) => {
 };
 
 const ProductDetailsInfo = ({
-  data, 
+  data,
   products,
   totalReviewsLength,
   averageRating,
