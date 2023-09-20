@@ -231,11 +231,13 @@ const UserAddress = ({ active }) => {
             key={index}
           >
             <div className="flex items-center">
-              <h5 className="pl-5 font-[600]">{item.addressType}</h5>
+              <h5 className="pl-5 800px:text-[18px] text-[12px] font-[600]">
+                {item.addressType}
+              </h5>
             </div>
             <div className="pl-8 flex items-center">
-              <h6 className="text-[12px] 800px:text-[unset]">
-                {item.address1} {item.address2}
+              <h6 className="text-[10px] 800px:text-[unset]">
+                {item.address1}, {item.address2}
               </h6>
             </div>
             <div className="pl-8 flex items-center">
@@ -245,8 +247,7 @@ const UserAddress = ({ active }) => {
             </div>
             <div className="min-w-[10%] flex items-center justify-between pl-8">
               <AiOutlineDelete
-                size={25}
-                className="cursor-pointer"
+                className="cursor-pointer  text-[2em]"
                 onClick={() => handleDelete(item)}
               />
             </div>

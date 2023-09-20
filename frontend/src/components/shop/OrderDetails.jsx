@@ -63,7 +63,7 @@ const OrderDetails = () => {
     console.log("yes");
   };
   return (
-    <div className={` py-4  min-h-screen ${styles.section} text-white`}>
+    <div className={` py-4  min-h-screen ${styles.section} `}>
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center">
           <HiShoppingBag size={30} color="crimson" />

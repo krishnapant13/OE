@@ -105,7 +105,7 @@ const AllOrders = () => {
       });
     });
   return (
-    <div className="pl-8 pt-2 bg-white pr-8">
+    <div className="800px:w-full w-[35%] bg-white 800px:pr-8">
       <DataGrid
         rows={row}
         columns={columns}

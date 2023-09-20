@@ -75,7 +75,7 @@ const Header = ({ activeHeading }) => {
   });
   return (
     <>
-      {/* <div className={`${styles.section}`}>
+      <div className={`${styles.section}`}>
         {user && user?.email === "krishnapant1303@gmail.com" && (
           <div className="hidden 800px:h-[50px] pt-5 mb-4 800px:flex justify-end items-center ">
             <div
@@ -93,7 +93,7 @@ const Header = ({ activeHeading }) => {
             </div>
           </div>
         )}
-      </div> */}
+      </div>
       <div
         className={`${
           active === true
@@ -231,11 +231,7 @@ const Header = ({ activeHeading }) => {
       >
         <div className="w-full flex items-center justify-between">
           <div>
-            <BiMenuAltLeft
-              size={40}
-              className="ml-4"
-              onClick={() => setOpen(true)}
-            />
+            <BiMenuAltLeft size={40} onClick={() => setOpen(true)} />
           </div>
           <div>
             <Link to="/">
@@ -247,12 +243,9 @@ const Header = ({ activeHeading }) => {
             </Link>
           </div>
           <div>
-            <div
-              className="relative mr-[20px]"
-              onClick={() => setOpenCart(true)}
-            >
-              <AiOutlineShoppingCart size={30} />
-              <span className="absolute right-0 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px]  leading-tight text-center">
+            <div className="relative" onClick={() => setOpenCart(true)}>
+              <AiOutlineShoppingCart size={30} className="mr-1" />
+              <span className="absolute right-1 top-0 rounded-full bg-[#3bc177] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px]  leading-tight text-center">
                 {cart && cart.length}
               </span>
             </div>
@@ -288,7 +281,6 @@ const Header = ({ activeHeading }) => {
                   onClick={() => setOpen(false)}
                 />
               </div>
-
               <div className="my-8 w-[92%] m-auto h-[40px relative]">
                 <input
                   type="search"
@@ -297,14 +289,14 @@ const Header = ({ activeHeading }) => {
                   value={searchTerm}
                   onChange={handleSearchChange}
                 />
-                {searchData && (
+                {searchData && searchTerm && (
                   <div className="absolute bg-[#fff] z-10 shadow w-full left-0 p-3">
                     {searchData.map((i) => {
                       return (
                         <Link to={`/product/${i._id}`}>
                           <div className="flex items-center">
                             <img
-                              src={i.image_Url[0]?.url}
+                              src={`${backend_url}${i.images[0]}`}
                               alt=""
                               className="w-[50px] mr-2"
                             />
@@ -316,19 +308,19 @@ const Header = ({ activeHeading }) => {
                   </div>
                 )}
               </div>
-
-              <NavBar active={activeHeading} />
-              <div className={`${styles.button} ml-4 !rounded-[4px]`}>
-                <Link to="/shop-create">
-                  <h1 className="text-[#fff] flex items-center">
-                    Become Seller <IoIosArrowForward className="ml-1" />
-                  </h1>
-                </Link>
-              </div>
+              <NavBar active={activeHeading} />{" "}
+              {user && user?.email === "krishnapant1303@gmail.com" && (
+                <div className={`${styles.button} ml-4 !rounded-[4px]`}>
+                  <Link to="/shop-create">
+                    <h1 className="text-[#fff] flex items-center">
+                      Dashboard <IoIosArrowForward className="ml-1" />
+                    </h1>
+                  </Link>
+                </div>
+              )}
               <br />
               <br />
               <br />
-
               <div className="flex w-full justify-center">
                 {isAuthenticated ? (
                   <div>

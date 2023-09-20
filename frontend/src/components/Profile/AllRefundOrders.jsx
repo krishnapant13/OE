@@ -107,7 +107,7 @@ const AllRefundOrders = () => {
       });
     });
   return (
-    <div className="pl-8 pt-1">
+    <div className="800px:w-full w-[35%] bg-white 800px:pr-8">
       <DataGrid
         rows={row}
         columns={columns}

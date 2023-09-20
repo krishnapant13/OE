@@ -336,7 +336,7 @@ const CartData = ({
               <h5 className="text-[18px] font-[600] flex justify-center items-center">
                 <span
                   className={`${
-                    (matchingItem && "text-red-700 line-through mr-1")
+                    matchingItem && "text-red-700 line-through mr-1"
                   }`}
                 >
                   {item.discountPrice + " "}{" "}
@@ -350,6 +350,15 @@ const CartData = ({
                 ₹
               </h5>
             </div>
+            {matchingItem && (
+              <p className="text-red-900 text-[0.8em]">
+                <span className="mr-[0.2em]">
+                  Coupon '{couponCodeData?.name}' applied:
+                  {couponCodeData?.value}% off 
+                </span>
+               {item.name}
+              </p>
+            )}
           </div>
         );
       })}
