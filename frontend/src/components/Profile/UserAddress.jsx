@@ -8,7 +8,6 @@ import { Country, State } from "country-state-city";
 import { deleteUserAddress, updatUserAddress } from "../../redux/actions/user";
 
 const UserAddress = ({ active }) => {
-  console.log(active);
   const [open, setOpen] = useState(false);
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
@@ -213,7 +212,7 @@ const UserAddress = ({ active }) => {
         </div>
       )}
       <div className="flex w-full items-center justify-between">
-        <h1 className="text-[25px] font-[600] text-[#000000ba] pb-2">
+        <h1 className="md:text-[25px] text-[18px] font-[600] text-[#000000ba] pb-2 ">
           My Addresses
         </h1>
         <div

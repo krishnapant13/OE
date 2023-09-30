@@ -77,7 +77,7 @@ const ProfileSection = () => {
         <br />
         <br />
         <div className="w-full px-5">
-          <form onSubmit={handleSubmit} area-required={true}>
+          <form onSubmit={handleSubmit} area-required="true">
             <Box sx={{ flexGrow: 1 }}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6} lg={6} xl={6}>

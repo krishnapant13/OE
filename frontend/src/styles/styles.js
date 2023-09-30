@@ -11,7 +11,7 @@ const styles = {
   shop_name: "pt-3 text-[15px] text-blue-400 pb-3",
   active_indicator: "absolute bottom-[-27%] left-0 h-[3px] w-full bg-[crimson]",
   button:
-    "w-[150px] bg-black h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer",
+    "md:w-[150px] w-[100px] bg-black h-[30px]  md:h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer",
   adminButton:
     "w-[150px] bg-black h-[30px] my-3 flex items-center justify-center rounded-xl cursor-pointer",
   cart_button:

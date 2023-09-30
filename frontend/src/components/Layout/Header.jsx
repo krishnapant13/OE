@@ -141,7 +141,7 @@ const Header = ({ activeHeading }) => {
                   {searchData &&
                     searchData.map((i, index) => {
                       return (
-                        <Link to={`/product/${i._id}`}>
+                        <Link to={`/product/${i._id}`} key={index}>
                           <div className="w-full flex items-center py-2">
                             <img
                               src={`${backend_url}${i.images[0]}`}
@@ -291,9 +291,9 @@ const Header = ({ activeHeading }) => {
                 />
                 {searchData && searchTerm && (
                   <div className="absolute bg-[#fff] z-10 shadow w-full left-0 p-3">
-                    {searchData.map((i) => {
+                    {searchData.map((i, index) => {
                       return (
-                        <Link to={`/product/${i._id}`}>
+                        <Link to={`/product/${i._id}`} key={index}>
                           <div className="flex items-center">
                             <img
                               src={`${backend_url}${i.images[0]}`}

@@ -81,7 +81,7 @@ const UserOrderDetails = () => {
       {/* order items */}
       {data &&
         data.cart.map((item, index) => (
-          <div className="w-full flex items-start mb-5 mt-4">
+          <div className="w-full flex items-start mb-5 mt-4" key={index}>
             <img
               src={`${backend_url}/${item.images[0]}`}
               alt=""
